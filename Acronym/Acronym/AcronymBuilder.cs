@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Acronym
 {
-    class AcronymBuilder
+    public class AcronymBuilder
     {
         public string Text { get; set; }
         public string Expression { get; set; }
@@ -12,6 +12,7 @@ namespace Acronym
         public AcronymBuilder(string text, string expression)
         {
             StringBuilder tempAcronym = new StringBuilder();
+
             if (!String.IsNullOrEmpty(text))
             {
                 foreach (string item in text.Split(" "))
@@ -23,6 +24,11 @@ namespace Acronym
                 //Console.WriteLine(acronym);
                 Console.WriteLine(expression.Replace(text, acronym.ToString()));
             }
+            else
+            {
+                Console.WriteLine("No content");
+            }
+
         }
 
         public static bool IsUpperCase(string word)
